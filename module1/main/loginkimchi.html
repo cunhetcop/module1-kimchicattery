@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Trang Login</title>
+    <link rel="stylesheet" href="loginkimchi.css">
+
+
+
+</head>
+
+<body>
+<!--    <section>-->
+<!--        &lt;!&ndash;Bắt Đầu Phần Hình Ảnh&ndash;&gt;-->
+<!--        <div class="img-bg">-->
+<!--            <img src="https://scontent-hkt1-1.xx.fbcdn.net/v/t39.30808-6/278185209_5423010074417540_8282088755660481727_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3CHGv2nf8aYAX-YzrUy&_nc_ht=scontent-hkt1-1.xx&oh=00_AT-yOe9LNacz4iNNIKDr7XLT5Yb0Clm7hNqbbX4Vhm_Yow&oe=6310BF43"-->
+<!--                alt="Hình Ảnh Minh Họa">-->
+<!--        </div>-->
+<!--        &lt;!&ndash;Kết Thúc Phần Hình Ảnh&ndash;&gt;-->
+<!--        &lt;!&ndash;Bắt Đầu Phần Nội Dung&ndash;&gt;-->
+<!--        <div class="noi-dung">-->
+<!--            <div class="form">-->
+<!--                <h2>Trang Đăng Nhập</h2>-->
+<!--                    <div class="input-form">-->
+<!--                        <span>Tên Người Dùng</span>-->
+<!--                        <input id="id1" type="text" name="">-->
+<!--                    </div>-->
+<!--                    <div class="input-form">-->
+<!--                        <span>Mật Khẩu</span>-->
+<!--                        <input id="pass1"  type="password" name="">-->
+<!--                    </div>-->
+<!--                    <div class="nho-dang-nhap">-->
+<!--                        <label><input type="checkbox" name=""> Nhớ Đăng Nhập</label>-->
+<!--                    </div>-->
+<!--                    <div class="input-form">-->
+<!--                        <input id="login1" onclick="login()" type="submit" value="Đăng Nhập">-->
+<!--                    </div>-->
+<!--                    <div class="input-form">-->
+<!--                        <p>Bạn Chưa Có Tài Khoản? <a href="#">Đăng Ký</a></p>-->
+<!--                    </div>-->
+<!--                <h3>Đăng Nhập Bằng Mạng Xã Hội</h3>-->
+<!--                <ul class="icon-dang-nhap">-->
+<!--                    <li><i class="fa fa-facebook" aria-hidden="true"></i></li>-->
+<!--                    <li><i class="fa fa-google" aria-hidden="true"></i></li>-->
+<!--                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;Kết Thúc Phần Nội Dung&ndash;&gt;-->
+<!--    </section>-->
+
+<!--<script>-->
+<!--    function login(){-->
+<!--        let user = document.getElementById("id1").value;-->
+<!--        let pass = document.getElementById("pass1").value;-->
+<!--        if (user === "halinh" && pass === "halinh"){-->
+<!--            alert("đăng nhập thành công!")-->
+<!--            window.location.href="suasanpham.html";-->
+<!--        } else {-->
+<!--            alert("Sai mật khẩu")-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<h2>Sign in/up Form</h2>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <div class="form">
+            <h1>Create Account</h1>
+            <input id="name2" type="text" placeholder="Name" />
+            <input id="email2" type="email" placeholder="Email" />
+            <input id="pass2" type="password" placeholder="Password" />
+            <button onclick="showMessage()">Sign Up</button>
+        </div>
+    </div>
+    <div class="form-container sign-in-container">
+        <div class="form">
+            <h1>Sign in</h1>
+            <input id="email1" type="email" placeholder="Email" />
+            <input id="pass1" type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button onclick="login()">Sign In</button>
+        </div>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button  class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+<script src="loginkimchi.js"></script>

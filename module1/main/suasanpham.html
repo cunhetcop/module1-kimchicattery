@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Quản lý sản phẩm</h1>
+<table>
+    <tr>
+        <td>
+            <input placeholder="nhập tên" id="name">
+        </td>
+        <td>
+            <input placeholder="nhập ảnh" id="img">
+        </td>
+        <td>
+            <input placeholder="nhập giá" id="price">
+        </td>
+        <td>
+            <button onclick="taoMoi()">Thêm mới</button>
+        </td>
+    </tr>
+</table>
+<h2>Danh sách Sản phẩm</h2>
+<table border="1" id="show">
+
+</table>
+
+</body>
+</html>
+<script>
+let arr1 = ["Cát vệ sinh cho mèo", "http://channel.vcmedia.vn/2020/11/4/8e2f89dcf0baeee78ca10a8b39dd8962-1604478286194427446679.jpg", "800$" ]
+let arr2 = ["Bát ăn cho mèo", "https://bizweb.dktcdn.net/100/229/172/products/img-8954.jpg?v=1532946097000", "700$" ]
+let products = [arr1,arr2]
+    // let products = JSON.parse(localStorage.getItem("products"));
+    show();
+    function show() {
+        let str = ""
+        for (let i = 0; i < products.length; i++) {
+            str += `<tr>
+                <td>${products[i][0]}</td>
+                <td><img src="${products[i][1]}" height="150" width="350"></td>
+                <td>${products[i][2]}</td>
+                <td><button onclick="showEdit(${i})">Edit</button></td>
+                <td><button onclick="xoaProduct(${i})">Delete</button></td>
+               </tr>`;
+        }
+        document.getElementById("show").innerHTML = str;
+    }
+
+    let indexEdit = -1;
+
+    function showEdit(index) {
+        indexEdit = index;
+        document.getElementById("name").value = products[index][0];
+        document.getElementById("img").value = products[index][1];
+        document.getElementById("price").value = products[index][2];
+
+    }
+
+    function taoMoi() {
+        let name = document.getElementById("name").value;
+        let img = document.getElementById("img").value;
+        let price = document.getElementById("price").value;
+        let arr = [name, img, price];
+        if (indexEdit === -1){
+            products.push(arr);
+        } else {
+            products[indexEdit] = arr;
+            indexEdit = -1;
+        }
+        localStorage.setItem("products", JSON.stringify(products));
+        show();
+
+        document.getElementById("name").value = "";
+        document.getElementById("img").value = "";
+        document.getElementById("price").value = "";
+    }
+
+    function xoaProduct(index) {
+        products.splice(index, 1);
+        show();
+    }
+</script>
